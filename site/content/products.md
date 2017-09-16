@@ -77,6 +77,13 @@ pricing:
     monthly subscription plans to receive great coffee at your doorstep each
     month. Contact us about more details and payment info.
   plans:
+    - description: 'Nothing is free, babe'
+      items:
+        - zero
+        - zero
+        - zero
+      plan: Free
+      price: '0'
     - description: Perfect for the drinker who likes to enjoy 1-2 cups per day.
       items:
         - 3 lbs of coffee per month
@@ -99,4 +106,5 @@ pricing:
       plan: Custom
       price: '?'
 ---
+
 
