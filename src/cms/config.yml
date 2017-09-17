@@ -29,27 +29,31 @@ collections: # A list of collections the CMS should be able to edit
           name: author-settings
           widget: "object"
           fields:
-          - {label: "No avatar", name: "no-avatar", widget: "string", class: "thumb"}
+          - {label: "No avatar", name: "no-avatar", widget: "image", class: "thumb"}
 
         - label: "Post Settings"
           name: post-settings
           widget: "object"
           fields:
             - {label: "Number of posts on frontpage", name: front-limit, widget: number}
-            - {label: "Default Author", name: author, widget: string}
+            - {label: "Default Author", name: author, widget: relation, collection: authors, searchFields: [title], valueField: title}
 
-    - name: "authors"
-      label: "Authors"
-      file: "site/data/authors.yaml"
-      description: "Author descriptions"
+  - name: "authors"
+    label: "Authors"
+    folder: "site/content/authors"
+    fields:
+    - name: authors
+      label: Authors
+      widget: list
       fields:
-        - name: authors
-          label: Authors
-          widget: list
-          fields:
-            - {label: "Name", name: "name", widget: "string"}
-            - {label: "Avatar", name: "avatar", widget: "string", class: "thumb"}
-            - {label: "Description", name: "description", widget: "markdown"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Avatar", name: "avatar", widget: "image", class: "thumb"}
+      - {label: "Description", name: "description", widget: "markdown"}
+      - {label: "Twitter", name: "twitter", widget: "string"}
+      - {label: "Facebook", name: "facebook", widget: "string"}
+      - {label: "Linkedin", name: "linkedin", widget: "string"}
+      - {label: "Instagram", name: "instagram", widget: "string"}
+      - {label: "Google", name: "google", widget: "string"}
 
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Post" # Used in the UI, ie.: "New Post"
