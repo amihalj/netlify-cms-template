@@ -1,6 +1,9 @@
 site-settings:
   copy-right: bytellio.com
+  facebook: 'https://www.facebook.com/pages/Bytellio/570499729743005'
+  google: 'https://plus.google.com/+BytellioSoftware'
   site-title: Bytellio cloud software development
+  twitter: 'https://twitter.com/Bytellio'
 author-settings:
   no-avatar: /img/no-avatar.png
 post-settings:
