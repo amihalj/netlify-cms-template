@@ -7,6 +7,50 @@ media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
 collections: # A list of collections the CMS should be able to edit
+
+  - name: "settings"
+    label: "Settings"
+    editor:
+      preview: false
+    files:
+    - name: "general"
+      label: "Site Settings"
+      file: "site/data/settings.yaml"
+      description: "General Site Settings"
+      fields:
+        - label: "Site Settings"
+          name: site-settings
+          widget: "object"
+          fields:
+          - {label: "Site title", name: "site-title", widget: "string"}
+          - {label: "Copy right", name: "copy-right", widget: "string"}
+        
+        - label: "Author Settings"
+          name: author-settings
+          widget: "object"
+          fields:
+          - {label: "No avatar", name: "no-avatar", widget: "string", class: "thumb"}
+
+        - label: "Post Settings"
+          name: post-settings
+          widget: "object"
+          fields:
+            - {label: "Number of posts on frontpage", name: front-limit, widget: number}
+            - {label: "Default Author", name: author, widget: string}
+
+    - name: "authors"
+      label: "Authors"
+      file: "site/data/authors.yaml"
+      description: "Author descriptions"
+      fields:
+        - name: authors
+          label: Authors
+          widget: list
+          fields:
+            - {label: "Name", name: "name", widget: "string"}
+            - {label: "Avatar", name: "avatar", widget: "string", class: "thumb"}
+            - {label: "Description", name: "description", widget: "markdown"}
+
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Post" # Used in the UI, ie.: "New Post"
     folder: "site/content/post" # The path to the folder where the documents are stored
@@ -21,6 +65,40 @@ collections: # A list of collections the CMS should be able to edit
   - name: "pages"
     label: "Pages"
     files:
+
+      - file: "site/content/index.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - {label: Meta Title, name: meta-title, widget: string}
+          - {label: Meta Keywords, name: keywords, widget: string}
+          - {label: Meta Description, name: meta-description, widget: text}
+          - {label: Title, name: title, widget: string}
+          - {label: Type, name: type, widget: hidden, default: careers}
+          - {label: Page, name: page, widget: hidden, default: "/index.html"}
+          - {label: Heading, name: h1, widget: string}
+          - {label: Intro, name: intro, widget: markdown}
+          - label: Slider
+            name: slider
+            widget: list
+            fields:
+            - {label: Title, name: title, widget: string}
+            - {label: Image, name: image, widget: image}
+          
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+            - {label: Title, name: title, widget: string}
+            - {label: Image, name: image, widget: image, required: false}
+            - {label: Intro, name: intro, widget: markdown}
+          - label: Testimonials
+            name: testimonials
+            widget: list
+            fields:
+            - {label: Name, name: name, widget: string}
+            - {label: Avatar, name: avatar, widget: image, required: false}
+            - {label: Testimonial, name: testimonial, widget: text}
 
       - file: "site/content/careers.md"
         label: "Careers"
