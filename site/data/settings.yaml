@@ -1,8 +1,8 @@
 site-settings:
-  site-title: Bytellio cloud software development
   copy-right: bytellio.com
+  site-title: Bytellio cloud software development
 author-settings:
-  no-avatar: "/img/no-avatar.png"
-
+  no-avatar: /img/no-avatar.png
 post-settings:
+  author: Ante Mihalj
   front-limit: 10
