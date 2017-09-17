@@ -1,0 +1,14 @@
+---
+baseurl: "/"
+languageCode: "en-us"
+title: "Bytellio software development"
+copyright: bytellio.com
+
+menu:
+    top:
+    - {Name: Home, Identifier: home, Url: "/", Weight: 10}
+    - {Name: Products, Identifier: products, Url: "/products/", Weight: 20}
+    - {Name: Blog, Identifier: post, Url: "/post/", Weight: 30}
+    - {Name: Contact, Identifier: contact, Url: "/contact/", Weight: 40}
+    - {Name: Careers, Identifier: careers, Url: "/careers/", Weight: 50}
+---

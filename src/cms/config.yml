@@ -24,6 +24,14 @@ collections: # A list of collections the CMS should be able to edit
           fields:
           - {label: "Site title", name: "site-title", widget: "string"}
           - {label: "Copy right", name: "copy-right", widget: "string"}
+          - {label: "Email", name: "email", widget: "string", required: false}
+          - {label: "Address", name: "address", widget: "string", required: false}
+          - {label: "Twitter", name: "twitter", widget: "string", required: false}
+          - {label: "Facebook", name: "facebook", widget: "string", required: false}
+          - {label: "Linkedin", name: "linkedin", widget: "string", required: false}
+          - {label: "Instagram", name: "instagram", widget: "string", required: false}
+          - {label: "Google", name: "google", widget: "string", required: false}
+
         
         - label: "Author Settings"
           name: author-settings
@@ -41,19 +49,16 @@ collections: # A list of collections the CMS should be able to edit
   - name: "authors"
     label: "Authors"
     folder: "site/content/authors"
+    create: true
     fields:
-    - name: authors
-      label: Authors
-      widget: list
-      fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Avatar", name: "avatar", widget: "image", class: "thumb"}
-      - {label: "Description", name: "description", widget: "markdown"}
-      - {label: "Twitter", name: "twitter", widget: "string"}
-      - {label: "Facebook", name: "facebook", widget: "string"}
-      - {label: "Linkedin", name: "linkedin", widget: "string"}
-      - {label: "Instagram", name: "instagram", widget: "string"}
-      - {label: "Google", name: "google", widget: "string"}
+    - {label: "Title", name: "title", widget: "string"}
+    - {label: "Avatar", name: "image", widget: "image", class: "thumb"}
+    - {label: "Description", name: "description", widget: "markdown"}
+    - {label: "Twitter", name: "twitter", widget: "string", required: false}
+    - {label: "Facebook", name: "facebook", widget: "string", required: false}
+    - {label: "Linkedin", name: "linkedin", widget: "string", required: false}
+    - {label: "Instagram", name: "instagram", widget: "string", required: false}
+    - {label: "Google", name: "google", widget: "string", required: false}
 
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Post" # Used in the UI, ie.: "New Post"
@@ -74,11 +79,12 @@ collections: # A list of collections the CMS should be able to edit
         label: "Home"
         name: "home"
         fields:
+          - {label: Topmenu, name: topmenu, widget: hidden, default: "true"}
           - {label: Meta Title, name: meta-title, widget: string}
           - {label: Meta Keywords, name: keywords, widget: string}
           - {label: Meta Description, name: meta-description, widget: text}
           - {label: Title, name: title, widget: string}
-          - {label: Type, name: type, widget: hidden, default: careers}
+          - {label: Type, name: type, widget: hidden, default: page}
           - {label: Page, name: page, widget: hidden, default: "/index.html"}
           - {label: Heading, name: h1, widget: string}
           - {label: Intro, name: intro, widget: markdown}
@@ -108,11 +114,12 @@ collections: # A list of collections the CMS should be able to edit
         label: "Careers"
         name: "careers"
         fields:
+          - {label: Topmenu, name: topmenu, widget: hidden, default: true}
           - {label: Meta Title, name: meta-title, widget: string}
           - {label: Meta Keywords, name: keywords, widget: string}
           - {label: Meta Description, name: meta-description, widget: text}
           - {label: Title, name: title, widget: string}
-          - {label: Type, name: type, widget: hidden, default: careers}
+          - {label: Type, name: type, widget: hidden, default: page}
           - {label: Page, name: page, widget: hidden, default: "/careers.html"}
 
 
@@ -120,11 +127,12 @@ collections: # A list of collections the CMS should be able to edit
         label: "Contact"
         name: "contact"
         fields:
+          - {label: Topmenu, name: topmenu, widget: hidden, default: true}
           - {label: Meta Title, name: meta-title, widget: string}
           - {label: Meta Keywords, name: keywords, widget: string}
           - {label: Meta Description, name: meta-description, widget: text}
           - {label: Title, name: title, widget: string}
-          - {label: Type, name: type, widget: hidden, default: contact}
+          - {label: Type, name: type, widget: hidden, default: page}
           - {label: Page, name: page, widget: hidden, default: "/contact.html"}
           - {label: Image, name: image, widget: image, required: false}
           - {label: Heading, name: heading, widget: string, required: false}
@@ -145,8 +153,9 @@ collections: # A list of collections the CMS should be able to edit
         label: "Products Page"
         name: "products"
         fields:
+          - {label: Topmenu, name: topmenu, widget: hidden, default: true}
           - {label: Title, name: title, widget: string}
-          - {label: Type, name: type, widget: hidden, default: products}
+          - {label: Type, name: type, widget: hidden, default: page}
           - {label: Page, name: page, widget: hidden, default: "/products.html"}
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
