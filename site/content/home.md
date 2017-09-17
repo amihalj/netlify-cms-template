@@ -6,7 +6,7 @@ title: Home
 type: products
 page: /index.html
 h1: Team of professionals with real production experience
-intro: Bla bla bla
+intro: Bla bla bla. It is very **important notice**
 slider:
   - title: Web app development
 sections:
@@ -20,6 +20,7 @@ testimonials:
   - name: 'Some Dude, CEO at Geeza'
     testimonial: They are cool
 ---
+
 
 
 
